@@ -21,7 +21,7 @@ const Home = () => {
     setLoading(true);
     setError("");
     setPage(pageNum);
-    setRecipes([]); // reset
+    setRecipes([]);
 
     try {
       const offset = (pageNum - 1) * RESULTS_PER_PAGE;
@@ -38,10 +38,8 @@ const Home = () => {
         }
       );
 
-      // Filtra solo ricette con immagine
       let filtered = res.data.results.filter(r => r.image);
 
-      // Deduplica completa per id + titolo
       const unique = Array.from(
         new Map(filtered.map(item => [`${item.id}-${item.title}`, item])).values()
       );

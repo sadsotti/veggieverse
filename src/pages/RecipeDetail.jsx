@@ -31,15 +31,11 @@ const RecipeDetail = () => {
   if (loading) return <div className="loader"></div>;
   if (!details) return <p>Recipe not found</p>;
 
-  // Pulizia del summary: rimuove tag HTML e frasi duplicate
   const cleanSummary = () => {
     if (!details.summary) return "";
-    // Rimuove tag HTML
     let text = details.summary.replace(/<\/?[^>]+(>|$)/g, "");
-    // Rimuove ripetizioni esatte di frasi
     const sentences = text.split(/\. |\n/).map(s => s.trim()).filter(Boolean);
     const uniqueSentences = Array.from(new Set(sentences));
-    // Mostra solo le prime 2-3 frasi
     return uniqueSentences.slice(0, 3).join(". ") + ".";
   };
 
