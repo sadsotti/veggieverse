@@ -113,3 +113,5 @@ The project follows a standard and organized structure for better maintainabilit
 * [Spoonacular API](https://spoonacular.com/food-api)
 * [start2impact](https://www.start2impact.it/)
 * [My LinkedIn](https://linkedin.com/in/lorenzo-sottile)
+
+---
